@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Pos\SupplierController;
 use App\Http\Controllers\Pos\EntityController;
+use App\Http\Controllers\Pos\CategoryController;
 
 
 
@@ -57,6 +58,17 @@ Route::controller(EntityController::class)->group(function () {
     Route::get('/entity/edit/{id}', 'EntityEdit')->name('entity.edit');
     Route::post('/entity/update', 'EntityUpdate')->name('entity.update');
     Route::get('/entity/delete/{id}', 'EntityDelete')->name('entity.delete');
+
+});
+
+// Category All Route 
+Route::controller(CategoryController::class)->group(function () {
+    Route::get('/category/all', 'CategoryAll')->name('category.all'); 
+    Route::get('/category/add', 'CategoryAdd')->name('category.add');
+    Route::post('/category/store', 'CategoryStore')->name('category.store');
+    Route::get('/category/edit/{id}', 'CategoryEdit')->name('category.edit');
+    Route::post('/category/update', 'CategoryUpdate')->name('category.update');
+    Route::get('/category/delete/{id}', 'CategoryDelete')->name('category.delete');
 
 });
 
