@@ -33,6 +33,16 @@
             </li>
 
             <li>
+            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                <i class="ri-mail-send-line"></i>
+                <span>Gérer les entités</span>
+            </a>
+            <ul class="sub-menu" aria-expanded="false">
+                <li><a href="{{ route('entity.all') }}">Toutes les entités</a></li>
+                </ul>
+        </li>
+
+            <li>
                 <a href="javascript: void(0);" class="has-arrow waves-effect">
                     <i class="ri-layout-3-line"></i>
                     <span>Layouts</span>

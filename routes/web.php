@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Pos\SupplierController;
+use App\Http\Controllers\Pos\EntityController;
 
 
 
@@ -45,6 +46,17 @@ Route::controller(SupplierController::class)->group(function () {
     Route::post('/supplier/update', 'SupplierUpdate')->name('supplier.update');
     Route::get('/supplier/delete/{id}', 'SupplierDelete')->name('supplier.delete');
 
+
+});
+
+// Entity All Route 
+Route::controller(EntityController::class)->group(function () {
+    Route::get('/entity/all', 'EntityAll')->name('entity.all'); 
+    Route::get('/entity/add', 'EntityAdd')->name('entity.add');
+    Route::post('/entity/store', 'EntityStore')->name('entity.store');
+    Route::get('/entity/edit/{id}', 'EntityEdit')->name('entity.edit');
+    Route::post('/entity/update', 'EntityUpdate')->name('entity.update');
+    Route::get('/entity/delete/{id}', 'EntityDelete')->name('entity.delete');
 
 });
 
