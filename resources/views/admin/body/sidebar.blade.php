@@ -35,7 +35,7 @@
             <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
                 <i class="ri-mail-send-line"></i>
-                <span>Gérer les entités</span>
+                <span>Gérer Entités</span>
             </a>
             <ul class="sub-menu" aria-expanded="false">
                 <li><a href="{{ route('entity.all') }}">Toutes les entités</a></li>
@@ -45,10 +45,21 @@
         <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
                 <i class="ri-mail-send-line"></i>
-                <span>Gérer les catégories</span>
+                <span>Gérer Catégories</span>
             </a>
             <ul class="sub-menu" aria-expanded="false">
                 <li><a href="{{ route('category.all') }}">Toutes les catégories</a></li>
+
+            </ul>
+        </li>
+
+        <li>
+            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                <i class="ri-mail-send-line"></i>
+                <span>Gérer les produits</span>
+            </a>
+            <ul class="sub-menu" aria-expanded="false">
+                <li><a href="{{ route('product.all') }}">Tous les produits</a></li>
 
             </ul>
         </li>
