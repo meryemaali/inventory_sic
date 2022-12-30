@@ -93,7 +93,7 @@
   
 
 
-<input type="submit" class="btn btn-info waves-effect waves-light" value="Update Product">
+<input type="submit" class="btn btn-info waves-effect waves-light" value="Modifier Produit">
             </form>
 
 

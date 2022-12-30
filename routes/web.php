@@ -7,6 +7,8 @@ use App\Http\Controllers\Pos\SupplierController;
 use App\Http\Controllers\Pos\EntityController;
 use App\Http\Controllers\Pos\CategoryController;
 use App\Http\Controllers\Pos\ProductController;
+use App\Http\Controllers\Pos\ProductEtatController;
+
 
 
 
@@ -82,6 +84,18 @@ Route::controller(ProductController::class)->group(function () {
     Route::get('/product/edit/{id}', 'ProductEdit')->name('product.edit');
     Route::post('/product/update', 'ProductUpdate')->name('product.update');
     Route::get('/product/delete/{id}', 'ProductDelete')->name('product.delete');
+
+
+});
+
+// Product Etat All Route 
+Route::controller(ProductEtatController::class)->group(function () {
+    Route::get('/productEtat/all', 'ProductEtatAll')->name('productEtat.all'); 
+    Route::get('/productEtat/add', 'productEtatAdd')->name('productEtat.add');
+    Route::post('/productEtat/store', 'productEtatStore')->name('productEtat.store');
+    Route::get('/productEtat/edit/{id}', 'productEtatEdit')->name('productEtat.edit');
+    Route::post('/productEtat/update', 'productEtatUpdate')->name('productEtat.update');
+    Route::get('/productEtat/delete/{id}', 'productEtatDelete')->name('productEtat.delete');
 
 
 });
