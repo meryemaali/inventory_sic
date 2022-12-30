@@ -24,9 +24,9 @@ return new class extends Migration
             $table->string('serial_number')->nullable();
             $table->string('service')->nullable();
             $table->string('etat')->nullable();
-            $table->string('ref_avarie')->nullable();
-            $table->string('ref_irreparable')->nullable();
-            $table->string('ref_remise')->nullable();
+            $table->string('ref_avarie')->default('');
+            $table->string('ref_irreparable')->default('');
+            $table->string('ref_remise')->default('');
             $table->tinyInteger('status')->default('1');
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();

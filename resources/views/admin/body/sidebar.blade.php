@@ -74,7 +74,7 @@
 
             </ul>
         </li>
-
+<!-- 
             <li class="menu-title">Pages</li>
 
             <li>
@@ -109,7 +109,7 @@
 
         
 
-        </ul>
+        </ul> -->
     </div>
     <!-- Sidebar -->
 </div>
