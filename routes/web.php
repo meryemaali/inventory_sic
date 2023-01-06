@@ -8,6 +8,9 @@ use App\Http\Controllers\Pos\EntityController;
 use App\Http\Controllers\Pos\CategoryController;
 use App\Http\Controllers\Pos\ProductController;
 use App\Http\Controllers\Pos\ProductEtatController;
+use App\Http\Controllers\Pos\PurchaseController;
+use App\Http\Controllers\Pos\DefaultController;
+
 
 
 
@@ -97,6 +100,20 @@ Route::controller(ProductEtatController::class)->group(function () {
     Route::post('/productEtat/update', 'productEtatUpdate')->name('productEtat.update');
     Route::get('/productEtat/delete/{id}', 'productEtatDelete')->name('productEtat.delete');
 
+
+});
+
+// Purchase All Route 
+Route::controller(PurchaseController::class)->group(function () {
+    Route::get('/purchase/all', 'PurchaseAll')->name('purchase.all'); 
+    Route::get('/purchase/add', 'PurchaseAdd')->name('purchase.add');
+
+});
+
+// Default All Route 
+Route::controller(DefaultController::class)->group(function () {
+    Route::get('/get-category', 'GetCategory')->name('get-category'); 
+    Route::get('/get-product', 'GetProduct')->name('get-product');
 
 });
 

@@ -46,7 +46,7 @@
         <label class="col-sm-2 col-form-label">Désignation </label>
         <div class="col-sm-10">
             <select name="product_id" class="form-select" aria-label="Default select example">
-                <option selected="">Choisir désigantion article</option>
+                <option selected="">Choisir désignation article</option>
                 @foreach($product as $pro)
                 <option value="{{ $pro->id }}">{{ $pro->name }}</option>
                @endforeach

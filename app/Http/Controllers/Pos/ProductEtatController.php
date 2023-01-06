@@ -23,15 +23,16 @@ class ProductEtatController extends Controller
     public function ProductEtatAdd(){
         $entity = Entity::all();
         $category = Category::all();
-        $product = Product::all();          
-        return view('backend.productEtat.productEtat_add',compact('entity','category','product'));
+        $product = Product::all();      
+        $productName = Product::orderBy('name','desc')->distinct()->get('name');     
+        return view('backend.productEtat.productEtat_add',compact('entity','category','product','productName'));
     } // End Method 
 
     public function ProductEtatStore(Request $request){
 
         ProductEtat::insert([
 
-            'secteur' =>  '0',
+            'secteur' =>  `0`,
             'base_rattachement' => '0',
             'type' =>'0',
             'entity_id' => $request->entity_id,
@@ -58,11 +59,9 @@ class ProductEtatController extends Controller
 
     public function ProductEtatEdit($id){
 
-        $entity = Entity::all();
-        $category = Category::all();
-        $product = Product::all();
+       
         $productEtat = ProductEtat::findOrFail($id);
-        return view('backend.productEtat.productEtat_edit',compact('productEtat','entity','category','product'));
+        return view('backend.productEtat.productEtat_edit',compact('productEtat'));
     } // End Method 
 
 
@@ -74,18 +73,13 @@ class ProductEtatController extends Controller
          ProductEtat::findOrFail($productEtat_id)->update([
 
             
-            'secteur' =>  '0',
-            'base_rattachement' => '0',
-            'type' =>'0',
-            'entity_id' => $request->entity_id,
             'category_id' => $request->category_id,
-            'product_id' => $request->product_id ,
-            'serial_number' => $request->serial_number,
-            'service' => $request->service,
-            'etat' => $request->etat,
-            'ref_avarie' => $request->ref_avarie,
-            'ref_irreparable' => $request->ref_irreparable,
-            'ref_remise' => $request->ref_remise,
+            'name' => $request->name,
+            'serial_number' => $request->serial_number ,
+            'supplier_id' => $request->supplier_id,
+            'entity_id' => $request->entity_id,
+            'quantity' => $request->quantity,
+            'min_quantity' => $request->min_quantity,
             'updated_by' => Auth::user()->id,
             'updated_at' => Carbon::now(), 
         ]);
