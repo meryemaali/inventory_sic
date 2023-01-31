@@ -81,7 +81,7 @@
             </a>
             <ul class="sub-menu" aria-expanded="false">
                 <li><a href="{{ route('purchase.all') }}">Tous les achats</a></li>
-
+                <li><a href="{{ route('purchase.pending') }}">Achats non approuvés</a></li>
             </ul>
         </li>
 <!-- 
