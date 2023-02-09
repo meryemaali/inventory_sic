@@ -81,7 +81,19 @@
             </a>
             <ul class="sub-menu" aria-expanded="false">
                 <li><a href="{{ route('purchase.all') }}">Tous les achats</a></li>
-                <li><a href="{{ route('purchase.pending') }}">Achats non approuvés</a></li>
+                <li><a href="{{ route('purchase.pending') }}">Achats à approuver</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                <i class="ri-mail-send-line"></i>
+                <span>Gérer les factures </span>
+            </a>
+            <ul class="sub-menu" aria-expanded="false">
+                <li><a href="{{ route('invoice.all') }}">Tous les factures</a></li>
+                <li><a href=" ">Factures à approuver</a></li>
+
             </ul>
         </li>
 <!-- 

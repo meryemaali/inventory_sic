@@ -23,7 +23,7 @@
             <div class="card">
                 <div class="card-body">
 
-    <a href="{{ route('productEtat.add') }}" class="btn btn-dark btn-rounded waves-effect waves-light" style="float:right;">Ajouter Etat </a> <br>  <br>               
+    <a href="{{ route('productEtat.add') }}" class="btn btn-dark btn-rounded waves-effect waves-light" style="float:right;"><i class="fas fa-plus-circle">Ajouter Etat </i> </a> <br>  <br>               
 
                     <h4 class="card-title">Matériels unités MR</h4>
 

@@ -33,7 +33,7 @@
   <div class="row mb-3">
         <label class="col-sm-2 col-form-label">Catégorie </label>
         <div class="col-sm-10">
-            <select name="category_id" class="form-select" aria-label="Default select example">
+            <select name="category_id" id="category_id" class="form-select" aria-label="Default select example">
                 <option selected="">Choisir la catégorie du produit</option>
                 @foreach($category as $cat)
                 <option value="{{ $cat->id }}">{{ $cat->name }}</option>
@@ -45,22 +45,20 @@
   <div class="row mb-3">
         <label class="col-sm-2 col-form-label">Désignation </label>
         <div class="col-sm-10">
-            <select name="product_id" class="form-select" aria-label="Default select example">
+            <select name="product_id" id="product_id" class="form-select select2" aria-label="Default select example">
                 <option selected="">Choisir désignation article</option>
-                @foreach($product as $pro)
-                <option value="{{ $pro->id }}">{{ $pro->name }}</option>
-               @endforeach
+               
                 </select>
+                
         </div>
     </div>
     <div class="row mb-3">
         <label class="col-sm-2 col-form-label">N/S </label>
         <div class="col-sm-10">
-            <select name="serial_number" class="form-select" aria-label="Default select example">
+            <select name="serial_number" id="serial_number" class="form-select select2" aria-label="Default select example">
                 <option selected="">Choisir numéro de série </option>
-                @foreach($product as $pro)
-                <option value="{{ $pro->id }}">{{ $pro->serial_number }}</option>
-               @endforeach
+                
+                
                 </select>
         </div>
     </div>
@@ -136,6 +134,10 @@
 </div>
 </div>
 
+
+
+
+
 <script type="text/javascript">
     $(document).ready(function (){
         $('#myForm').validate({
@@ -198,6 +200,51 @@
     });
     
 </script>
+
+
+
+<script type="text/javascript">
+    $(function(){
+        $(document).on('change','#category_id',function(){
+            var category_id = $(this).val();
+            $.ajax({
+                url:"{{ route('get-productEtat') }}",
+                type: "GET",
+                data:{category_id:category_id},
+                success:function(data){
+                    var html = '<option value="">Choisir produit</option>';
+                    $.each(data,function(key,v){
+                        html += '<option value=" '+v.id+' "> '+v.name+'</option>';
+                    });
+                    $('#product_id').html(html);
+                }
+            })
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    $(function(){
+        $(document).on('change','#product_id',function(){
+            var product_id = $(this).val();
+            $.ajax({
+                url:"{{ route('get-productNum') }}",
+                type: "GET",
+                data:{product_id:product_id},
+                success:function(data){
+                    var html = '<option value="">Choisir NS</option>';
+                    $.each(data,function(key,v){
+                        html += '<option value=" '+v.id+' "> '+v.serial_number+'</option>';
+                    });
+                    $('#serial_number').html(html);
+                }
+            })
+        });
+    });
+</script>
+
+
+
 
 
 

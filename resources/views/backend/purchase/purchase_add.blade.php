@@ -30,8 +30,8 @@
 
         <div class="col-md-4">
             <div class="md-3">
-                <label for="example-text-input" class="form-label">Name Fournisseur </label>
-                <select id="supplier_id" name="supplier_id" class="form-select" aria-label="Default select example">
+                <label for="example-text-input" class="form-label">Nom Fournisseur </label>
+                <select id="supplier_id" name="supplier_id" class="form-select select2" aria-label="Default select example">
                 <option selected="">Choisir un fournisseur</option>
                 @foreach($supplier as $supp)
                 <option value="{{ $supp->id }}">{{ $supp->name }}</option>
@@ -43,8 +43,8 @@
 
        <div class="col-md-4">
             <div class="md-3">
-                <label for="example-text-input" class="form-label">Nom Categorie </label>
-                <select name="category_id" id="category_id" class="form-select" aria-label="Default select example">
+                <label for="example-text-input" class="form-label">Nom Catégorie </label>
+                <select name="category_id" id="category_id" class="form-select select2" aria-label="Default select example">
                 <option selected="">Choisir une catégorie</option>
 
                 </select>
@@ -55,7 +55,7 @@
          <div class="col-md-4">
             <div class="md-3">
                 <label for="example-text-input" class="form-label">Nom Produit </label>
-                <select name="product_id" id="product_id" class="form-select" aria-label="Default select example">
+                <select name="product_id" id="product_id" class="form-select select2" aria-label="Default select example">
                 <option selected="">Choisir un produit</option>
 
                 </select>
@@ -85,7 +85,7 @@
             <table class="table-sm table-bordered" width="100%" style="border-color: #ddd;">
                 <thead>
                     <tr>
-                        <th>Categorie</th>
+                        <th>Catégorie</th>
                         <th>Nom produit </th>
                         <th>Quantité</th>
                         <th>Prix unité </th>

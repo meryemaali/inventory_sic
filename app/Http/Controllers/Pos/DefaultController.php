@@ -7,8 +7,9 @@ use Illuminate\Http\Request;
 use App\Models\Purchase;
 use App\Models\Supplier;
 use App\Models\Product;
-use App\Models\Unit;
+use App\Models\Entity;
 use App\Models\Category;
+use App\Models\ProductEtat;
 use Auth;
 use Illuminate\Support\Carbon;
 
@@ -27,6 +28,20 @@ class DefaultController extends Controller
 
         $category_id = $request->category_id; 
         $allProduct = Product::where('category_id',$category_id)->get();
+        return response()->json($allProduct);
+    } // End Mehtod 
+
+    public function GetProductEtat(Request $request){
+
+        $category_id = $request->category_id; 
+        $allProduct = Product::where('category_id',$category_id)->get();
+        return response()->json($allProduct);
+    } // End Mehtod 
+
+    public function GetProductNum(Request $request){
+
+        $product_id = $request->product_id;
+        $allProduct = Product::where('id',$product_id)->get();
         return response()->json($allProduct);
     } // End Mehtod 
 }
