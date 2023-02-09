@@ -9,7 +9,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <h4 class="mb-sm-0">Toutes les entités</h4>
+                                    <h4 class="mb-sm-0">Toutes les factures</h4>
 
 
 
@@ -23,19 +23,19 @@
             <div class="card">
                 <div class="card-body">
 
-    <a href="{{ route('entity.add') }}" class="btn btn-dark btn-rounded waves-effect waves-light" style="float:right;"><i class="fas fa-plus-circle">Ajouter entité </i></a> <br>  <br>               
+    <a href="{{ route('invoice.add') }}" class="btn btn-dark btn-rounded waves-effect waves-light" style="float:right;"><i class="fas fa-plus-circle"> Ajouter Facture </i></a> <br>  <br>               
 
-                    <h4 class="card-title">Entités </h4>
+                    <h4 class="card-title">Factures </h4>
 
 
                     <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <thead>
                         <tr>
                             <th>Sl</th>
-                            <th>Secteur</th> 
-                            <th>Base rattachement </th>
-                            <th>Type entité</th>
                             <th>Entité</th> 
+                            <th>N° Facture</th>
+                            <th>Date </th>
+                            <th>Description</th>  
                             <th>Action</th>
 
                         </thead>
@@ -43,21 +43,21 @@
 
                         <tbody>
 
-                        	@foreach($entities as $key => $item)
-                        <tr>
-                            <td> {{ $key+1}} </td>
-                            <td> {{ $item->secteur }} </td> 
-                              <td> {{ $item->base_rattachement }} </td> 
-                               <td> {{ $item->type }} </td> 
-                               <td> {{ $item->name }} </td> 
-                            <td>
-   <a href="{{ route('entity.edit',$item->id) }}" class="btn btn-info sm" title="Edit Data">  <i class="fas fa-edit"></i> </a>
+                        	@foreach($allData as $key => $item)
+            <tr>
+                <td> {{ $key+1}} </td>
+                <td>  </td> 
+                <td> {{ $item->invoice_no }} </td> 
+                <td> {{ date('d-m-Y',strtotime($item->date))  }} </td> 
 
-     <a href="{{ route('entity.delete',$item->id) }}" class="btn btn-danger sm" title="Delete Data" id="delete">  <i class="fas fa-trash-alt"></i> </a>
 
-                            </td>
+                 <td>  {{ $item->description }} </td> 
 
-                        </tr>
+                <td>  
+<a href="{{ route('purchase.delete',$item->id) }}" class="btn btn-danger sm" title="Delete Data" id="delete">  <i class="fas fa-trash-alt"></i> </a> 
+                </td>
+
+            </tr>
                         @endforeach
 
                         </tbody>

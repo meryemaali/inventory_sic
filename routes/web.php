@@ -119,6 +119,7 @@ Route::controller(PurchaseController::class)->group(function () {
 // Invoice All Route 
 Route::controller(InvoiceController::class)->group(function () {
     Route::get('/invoice/all', 'InvoiceAll')->name('invoice.all'); 
+    Route::get('/invoice/add', 'InvoiceAdd')->name('invoice.add'); 
 
 
 });
@@ -129,7 +130,9 @@ Route::controller(DefaultController::class)->group(function () {
     Route::get('/get-category', 'GetCategory')->name('get-category'); 
     Route::get('/get-product', 'GetProduct')->name('get-product');
     Route::get('/get-productEtat', 'GetProductEtat')->name('get-productEtat');
-    Route::get('/get-productNum', 'GetProductNum')->name('get-productNum'); 
+    Route::get('/get-productNum', 'GetProductNum')->name('get-productNum');
+    Route::get('/check-product', 'GetStock')->name('check-product-stock'); 
+ 
 
 });
 
