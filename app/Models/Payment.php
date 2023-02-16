@@ -9,4 +9,8 @@ class Payment extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function entity(){
+        return $this->belongsTo(Entity::class,'entity_id','id');
+    }
 }

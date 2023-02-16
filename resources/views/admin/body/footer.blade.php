@@ -7,7 +7,7 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="text-sm-end d-none d-sm-block">
-                                    Crafted with by SIC MR
+                                    By SIC MR
                                 </div>
                             </div>
                         </div>

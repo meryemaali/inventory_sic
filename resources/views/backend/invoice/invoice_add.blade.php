@@ -82,7 +82,7 @@
 <!--  ---------------------------------- -->
 
         <div class="card-body">
-        <form method="post" action="{{ route('purchase.store') }}">
+        <form method="post" action="{{ route('invoice.store') }}">
             @csrf
             <table class="table-sm table-bordered" width="100%" style="border-color: #ddd;">
                 <thead>
@@ -102,8 +102,13 @@
                 </tbody>
 
                 <tbody>
+                <td colspan="4"> Remise</td>
+            <td>
+            <input type="text" name="discount_amount" id="discount_amount" class="form-control estimated_amount" placeholder="Montant remise"  >
+            </td>
+        </tr>
                     <tr>
-                        <td colspan="4"> Grand Total</td>
+                        <td colspan="4"> Total</td>
                         <td>
                             <input type="text" name="estimated_amount" value="0" id="estimated_amount" class="form-control estimated_amount" readonly style="background-color: #ddd;" >
                         </td>
@@ -118,6 +123,37 @@
                     <textarea name="description" class="form-control" id="description" placeholder="Saisir description ici"></textarea>
                 </div>
             </div><br>
+
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <label> Statut paiement </label>
+                    <select name="paid_status" id="paid_status" class="form-select">
+                        <option value="">Choisir statut </option>
+                        <option value="full_paid">Paiement total</option>
+                        <option value="full_due">Paiement non effectué </option>
+                        <option value="partial_paid">Paiement partiel </option>
+
+                    </select>
+        <input type="text" name="paid_amount" class="form-control paid_amount" placeholder="Entrer le montant payé" style="display:none;">
+                </div>
+            
+
+                <div class="form-group col-md-9">
+                <label> Nom entité  </label>
+                    <select name="entity_id" id="entity_id" class="form-select">
+                        <option value="">Choisir entité</option>
+                        @foreach($entity as $ent)
+                        <option value="{{ $ent->id }}">{{ $ent->name }} </option>
+                        @endforeach
+                    </select>
+            </div> 
+            </div> <!-- // end row --> <br>
+
+
+
+ <br>
+
+
 
 
             <div class="form-group">
@@ -156,7 +192,7 @@
 
 <tr class="delete_add_more_item" id="delete_add_more_item">
         <input type="hidden" name="date" value="@{{date}}">
-        <input type="hidden" name="invoice_no[]" value="@{{invoice_no}}">
+        <input type="hidden" name="invoice_no" value="@{{invoice_no}}">
 
     <td>
         <input type="hidden" name="category_id[]" value="@{{category_id}}">
@@ -235,17 +271,25 @@
             var qty = $(this).closest("tr").find("input.selling_qty").val();
             var total = unit_price * qty;
             $(this).closest("tr").find("input.selling_price").val(total);
+            $('#discount_amount').trigger('keyup');
+        });
+        $(document).on('keyup','#discount_amount',function(){
             totalAmountPrice();
         });
         // Calculate sum of amout in invoice 
         function totalAmountPrice(){
             var sum = 0;
-            $(".selling_pricee").each(function(){
+            $(".selling_price").each(function(){
                 var value = $(this).val();
                 if(!isNaN(value) && value.length != 0){
                     sum += parseFloat(value);
                 }
             });
+
+            var discount_amount = parseFloat($('#discount_amount').val());
+            if(!isNaN(discount_amount) && discount_amount.length != 0){
+                    sum -= parseFloat(discount_amount);
+                }
             $('#estimated_amount').val(sum);
         }  
     });
@@ -289,6 +333,16 @@
     });
 </script>
 
+<script type="text/javascript">
+    $(document).on('change','#paid_status', function(){
+        var paid_status = $(this).val();
+        if (paid_status == 'partial_paid') {
+            $('.paid_amount').show();
+        }else{
+            $('.paid_amount').hide();
+        }
+    });
+</script>
 
 
 @endsection 
