@@ -93,6 +93,7 @@
             <ul class="sub-menu" aria-expanded="false">
                 <li><a href="{{ route('invoice.all') }}">Toutes les factures</a></li>
                 <li><a href="{{ route('invoice.pending.list') }} ">Factures à approuver</a></li>
+                <li><a href="{{ route('print.invoice.list') }}">Imprimer liste factures</a></li>
 
             </ul>
         </li>

@@ -57,7 +57,7 @@
 
                  <td>  {{ $item->description }} </td> 
 
-                <td>  $ {{ $item['payment']['total_amount'] }} </td>
+                <td>  {{ $item['payment']['total_amount'] }} </td>
 
                  <td> @if($item->status == '0')
                     <span class="btn btn-warning">En attente</span>
