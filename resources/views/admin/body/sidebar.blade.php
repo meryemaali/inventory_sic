@@ -92,7 +92,7 @@
             </a>
             <ul class="sub-menu" aria-expanded="false">
                 <li><a href="{{ route('invoice.all') }}">Toutes les factures</a></li>
-                <li><a href=" ">Factures à approuver</a></li>
+                <li><a href="{{ route('invoice.pending.list') }} ">Factures à approuver</a></li>
 
             </ul>
         </li>
