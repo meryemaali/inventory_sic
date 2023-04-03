@@ -11,6 +11,7 @@ use App\Http\Controllers\Pos\ProductEtatController;
 use App\Http\Controllers\Pos\PurchaseController;
 use App\Http\Controllers\Pos\DefaultController;
 use App\Http\Controllers\Pos\InvoiceController;
+use App\Http\Controllers\Pos\StockController;
 
 
 
@@ -130,6 +131,13 @@ Route::controller(InvoiceController::class)->group(function () {
     Route::get('/daily/invoice/report', 'DailyInvoiceReport')->name('daily.invoice.report');
     Route::get('/daily/invoice/pdf', 'DailyInvoicePdf')->name('daily.invoice.pdf');
 
+
+});
+
+// Stock All Route 
+Route::controller(StockController::class)->group(function () {
+    Route::get('/stock/report', 'StockReport')->name('stock.report');
+    Route::get('/stock/report/pdf', 'StockReportPdf')->name('stock.report.pdf'); 
 
 });
 
