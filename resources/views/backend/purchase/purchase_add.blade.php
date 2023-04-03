@@ -10,7 +10,7 @@
     <div class="card">
         <div class="card-body">
 
-            <h4 class="card-title">Ajouter Achat  </h4><br><br>
+            <h4 class="card-title">Ajouter Bon  </h4><br><br>
 
     <div class="row">
         <div class="col-md-4">
@@ -22,7 +22,7 @@
 
         <div class="col-md-4">
             <div class="md-3">
-                <label for="example-text-input" class="form-label">N° Achat</label>
+                <label for="example-text-input" class="form-label">N° Bon</label>
                  <input class="form-control example-date-input" name="purchase_no" type="text"  id="purchase_no">
             </div>
         </div>
@@ -187,7 +187,7 @@
                 return false;
                  }
                   if(purchase_no == ''){
-                $.notify("Num achat est obligatoire" ,  {globalPosition: 'top right', className:'error' });
+                $.notify("Num bon est obligatoire" ,  {globalPosition: 'top right', className:'error' });
                 return false;
                  }
                   if(supplier_id == ''){

@@ -77,11 +77,11 @@
         <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
                 <i class="ri-mail-send-line"></i>
-                <span>Gérer les achats</span>
+                <span>Gérer les Bons de commandes</span>
             </a>
             <ul class="sub-menu" aria-expanded="false">
-                <li><a href="{{ route('purchase.all') }}">Tous les achats</a></li>
-                <li><a href="{{ route('purchase.pending') }}">Achats à approuver</a></li>
+                <li><a href="{{ route('purchase.all') }}">Tous les bons de commandes</a></li>
+                <li><a href="{{ route('purchase.pending') }}">Bons à approuver</a></li>
             </ul>
         </li>
 
@@ -94,6 +94,7 @@
                 <li><a href="{{ route('invoice.all') }}">Toutes les factures</a></li>
                 <li><a href="{{ route('invoice.pending.list') }} ">Factures à approuver</a></li>
                 <li><a href="{{ route('print.invoice.list') }}">Imprimer liste factures</a></li>
+                <li><a href="{{ route('daily.invoice.report') }}">Rapport quotidien des factures</a></li>
 
             </ul>
         </li>
