@@ -8,12 +8,12 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <h4 class="mb-sm-0">Rapport Stock</h4>
+                                    <h4 class="mb-sm-0">Rapport stock du fournisseur</h4>
 
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="javascript: void(0);"> </a></li>
-                                            <li class="breadcrumb-item active">Rapport Stock </li>
+                                            <li class="breadcrumb-item active">Rapport stock du fournisseur</li>
                                         </ol>
                                     </div>
 
@@ -32,19 +32,14 @@
             <div class="invoice-title">
 
                 <h3>
-                    <!-- <img src="{{ asset('backend/assets/images/logo-sm.png') }}" alt="logo" height="24"/> Easy Shopping Mall -->
-                    DIVISION SIC
+                    <!-- <img src="{{ asset('backend/assets/images/logo-sm.png') }}" alt="logo" height="24"/> -->DIVISION SIC
                 </h3>
             </div>
             <hr>
 
             <div class="row">
                 <div class="col-6 mt-4">
-                    <address>
-                        <!-- <strong>Easy Shopping Mall:</strong><br>
-                        Purana Palton Dhaka<br>
-                        support@easylearningbd.com -->
-                    </address>
+                    
                 </div>
                 <div class="col-6 mt-4 text-end">
                     <address>
@@ -81,12 +76,16 @@
                 </div>
                 <div class="">
 <div class="table-responsive">
+
+    <h3 class="text-center"><strong>Nom Fournisseur : </strong> {{ $allData['0']['supplier']['name'] }} </h3>
+
+
     <table class="table">
         <thead>
         <tr>
             <td><strong>Sl </strong></td>
-            <td class="text-center"><strong>Fournisseur </strong></td>
-            </td>
+            <td class="text-center"><strong>Nom Fournisseur </strong></td>
+            
             <td class="text-center"><strong>Catégorie</strong>
             </td>
             <td class="text-center"><strong>Produit</strong>
@@ -123,7 +122,7 @@
         @php
         $date = new DateTime('now', new DateTimeZone('Asia/Dhaka')); 
         @endphp         
-        <i>Printing Time : {{ $date->format('F j, Y, g:i a') }}</i>   
+        <i>Date d'impression : {{ $date->format('F j, Y, g:i a') }}</i>   
 
                     <div class="d-print-none">
                         <div class="float-end">
