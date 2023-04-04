@@ -8,6 +8,7 @@ use App\Models\Entity;
 use App\Models\SecteurType;
 use Auth;
 use Illuminate\Support\Carbon;
+use App\Models\Payment;
 
 class EntityController extends Controller
 {
@@ -96,4 +97,17 @@ public function EntityEdit($id){
 
 } // End Method
 
+public function CreditEntity(){
+
+    $allData = Payment::whereIn('paid_status',['full_due','partial_paid'])->get();
+    return view('backend.entity.entity_credit',compact('allData'));
+
+} // End Method
+
+public function CreditEntityPrintPdf(){
+
+    $allData = Payment::whereIn('paid_status',['full_due','partial_paid'])->get();
+    return view('backend.pdf.entity_credit_pdf',compact('allData'));
+
+}// End Method
 }

@@ -39,6 +39,7 @@
             </a>
             <ul class="sub-menu" aria-expanded="false">
                 <li><a href="{{ route('entity.all') }}">Toutes les entités</a></li>
+                <!-- <li><a href="{{ route('credit.entity') }}">Crédit entités</a></li> -->
                 </ul>
         </li>
 

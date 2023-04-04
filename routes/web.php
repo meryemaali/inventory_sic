@@ -68,6 +68,8 @@ Route::controller(EntityController::class)->group(function () {
     Route::get('/entity/edit/{id}', 'EntityEdit')->name('entity.edit');
     Route::post('/entity/update', 'EntityUpdate')->name('entity.update');
     Route::get('/entity/delete/{id}', 'EntityDelete')->name('entity.delete');
+    Route::get('/credit/entity', 'CreditEntity')->name('credit.entity');
+    Route::get('/credit/entity/print/pdf', 'CreditEntityPrintPdf')->name('credit.entity.print.pdf');
 
 });
 
