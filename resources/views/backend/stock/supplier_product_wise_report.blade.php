@@ -116,7 +116,8 @@
                     </div> <!-- container-fluid -->
                 </div>
 
-                <script type="text/javascript">
+                
+<script type="text/javascript">
     $(function(){
         $(document).on('change','#category_id',function(){
             var category_id = $(this).val();
@@ -135,7 +136,8 @@
         });
     });
 </script>
-                <script type="text/javascript">
+
+<script type="text/javascript">
     $(document).on('change','.search_value', function(){
         var search_value = $(this).val();
         if (search_value == 'supplier_wise') {
@@ -164,6 +166,7 @@
                 supplier_id: {
                     required : true,
                 }, 
+             
                   
             },
             messages :{

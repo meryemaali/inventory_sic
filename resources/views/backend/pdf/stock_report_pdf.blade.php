@@ -41,9 +41,7 @@
             <div class="row">
                 <div class="col-6 mt-4">
                     <address>
-                        <!-- <strong>Easy Shopping Mall:</strong><br>
-                        Purana Palton Dhaka<br>
-                        support@easylearningbd.com -->
+                        
                     </address>
                 </div>
                 <div class="col-6 mt-4 text-end">
@@ -91,6 +89,10 @@
             </td>
             <td class="text-center"><strong>Produit</strong>
             </td>
+            <td class="text-center"><strong>In Qté  </strong>
+            </td>
+            <td class="text-center"><strong>Out Qté </strong>
+            </td>
             <td class="text-center"><strong>Stock  </strong>
             </td>
 
@@ -102,11 +104,17 @@
 
 
         @foreach($allData as $key => $item)
+        @php
+$buying_total = App\Models\Purchase::where('category_id',$item->category_id)->where('product_id',$item->id)->where('status','1')->sum('buying_qty');
+$selling_total = App\Models\InvoiceDetail::where('category_id',$item->category_id)->where('product_id',$item->id)->where('status','1')->sum('selling_qty');
+@endphp
         <tr>
          <td class="text-center"> {{ $key+1}} </td> 
          <td class="text-center"> {{ $item['supplier']['name'] }} </td> 
          <td class="text-center"> {{ $item['category']['name'] }} </td> 
          <td class="text-center"> {{ $item->name }} </td> 
+         <td class="text-center"> {{ $buying_total }} </td> 
+           <td class="text-center"> {{ $selling_total }} </td> 
          <td class="text-center"> {{ $item->quantity }} </td> 
 
 

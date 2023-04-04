@@ -1,7 +1,7 @@
 @extends('admin.admin_master')
 @section('admin')
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
  <div class="page-content">
                     <div class="container-fluid">
 
@@ -33,8 +33,10 @@
                         <tr>
                             <th>Sl</th>
                             <th>Fournisseur </th>
-                            <th>Categorie</th> 
-                            <th>Produit</th>  
+                            <th>Catégorie</th> 
+                            <th>Produit</th> 
+                            <th>In Qté</th> 
+                            <th>Out Qté </th>  
                             <th>Stock </th>
 
                         </thead>
@@ -43,16 +45,22 @@
                         <tbody>
 
                         	@foreach($allData as $key => $item)
-                        <tr>
-                            <td> {{ $key+1}} </td> 
-                            <td> {{ $item['supplier']['name'] }} </td> 
-                            <td> {{ $item['category']['name'] }} </td> 
-                             <td> {{ $item->name }} </td> 
-                              <td> {{ $item->quantity }} </td> 
+                            @php
+$buying_total = App\Models\Purchase::where('category_id',$item->category_id)->where('product_id',$item->id)->where('status','1')->sum('buying_qty');
+$selling_total = App\Models\InvoiceDetail::where('category_id',$item->category_id)->where('product_id',$item->id)->where('status','1')->sum('selling_qty');
+@endphp
+<tr>
+        <td> {{ $key+1}} </td> 
+        <td> {{ $item['supplier']['name'] }} </td> 
+        <td> {{ $item['category']['name'] }} </td> 
+        <td> {{ $item->name }} </td> 
+        <td> <span class="btn btn-success"> {{ $buying_total  }}</span>  </td> 
+        <td> <span class="btn btn-info"> {{ $selling_total  }}</span> </td> 
+        <td> <span class="btn btn-danger"> {{ $item->quantity }}</span> </td> 
 
 
-                        </tr>
-                        @endforeach
+    </tr>
+    @endforeach
 
                         </tbody>
                     </table>
