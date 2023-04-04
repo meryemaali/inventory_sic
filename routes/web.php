@@ -33,6 +33,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::middleware('auth')->group(function(){
 
 //Admin all Route
 Route::controller(AdminController::class)->group(function () {
@@ -113,6 +114,8 @@ Route::controller(PurchaseController::class)->group(function () {
     Route::get('/purchase/delete/{id}', 'PurchaseDelete')->name('purchase.delete');
     Route::get('/purchase/pending', 'PurchasePending')->name('purchase.pending');
     Route::get('/purchase/approve/{id}', 'PurchaseApprove')->name('purchase.approve');
+    Route::get('/daily/purchase/report', 'DailyPurchaseReport')->name('daily.purchase.report');
+    Route::get('/daily/purchase/pdf', 'DailyPurchasePdf')->name('daily.purchase.pdf');
 
 });
 
@@ -143,7 +146,7 @@ Route::controller(StockController::class)->group(function () {
     Route::get('/product/wise/pdf', 'ProductWisePdf')->name('product.wise.pdf');
 
 });
-
+}); // End Group Middleware
 
 // Default All Route 
 Route::controller(DefaultController::class)->group(function () {

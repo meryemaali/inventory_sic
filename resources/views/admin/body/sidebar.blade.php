@@ -82,6 +82,7 @@
             <ul class="sub-menu" aria-expanded="false">
                 <li><a href="{{ route('purchase.all') }}">Tous les bons de commandes</a></li>
                 <li><a href="{{ route('purchase.pending') }}">Bons à approuver</a></li>
+                <li><a href="{{ route('daily.purchase.report') }}">Rapport d’achat quotidien</a></li>
             </ul>
         </li>
 
