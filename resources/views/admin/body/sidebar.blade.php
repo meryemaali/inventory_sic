@@ -14,8 +14,8 @@
             <li class="menu-title">Menu</li>
 
             <li>
-                <a href="index.html" class="waves-effect">
-                    <i class="ri-dashboard-line"></i>
+                <a href="{{ url('/dashboard') }}" class="waves-effect">
+                    <i class="ri-home-fill"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
@@ -24,7 +24,7 @@
 
             <li>
                 <a href="javascript: void(0);" class="has-arrow waves-effect">
-                    <i class="ri-mail-send-line"></i>
+                    <i class="ri-hotel-fill"></i>
                     <span>Gérer Fournisseurs</span>
                 </a>
                 <ul class="sub-menu" aria-expanded="false">
@@ -34,7 +34,7 @@
 
             <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
-                <i class="ri-mail-send-line"></i>
+                <i class="ri-shield-user-fill"></i>
                 <span>Gérer Entités</span>
             </a>
             <ul class="sub-menu" aria-expanded="false">
@@ -45,7 +45,7 @@
 
         <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
-                <i class="ri-mail-send-line"></i>
+                <i class="ri-delete-back-fill"></i>
                 <span>Gérer Catégories</span>
             </a>
             <ul class="sub-menu" aria-expanded="false">
@@ -56,7 +56,7 @@
 
         <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
-                <i class="ri-mail-send-line"></i>
+                <i class="ri-apps-2-fill"></i>
                 <span>Gérer les produits</span>
             </a>
             <ul class="sub-menu" aria-expanded="false">
@@ -67,7 +67,7 @@
 
         <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
-                <i class="ri-mail-send-line"></i>
+                <i class="ri-reddit-fill"></i>
                 <span>Etat Matériel</span>
             </a>
             <ul class="sub-menu" aria-expanded="false">
@@ -77,7 +77,7 @@
         </li>
         <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
-                <i class="ri-mail-send-line"></i>
+                <i class="ri-oil-fill"></i>
                 <span>Gérer les Bons de commandes</span>
             </a>
             <ul class="sub-menu" aria-expanded="false">
@@ -89,7 +89,7 @@
 
         <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
-                <i class="ri-mail-send-line"></i>
+                <i class="ri-compass-2-fill"></i>
                 <span>Gérer les factures </span>
             </a>
             <ul class="sub-menu" aria-expanded="false">
@@ -104,7 +104,7 @@
 
 <li>
     <a href="javascript: void(0);" class="has-arrow waves-effect">
-        <i class="ri-account-circle-line"></i>
+        <i class="ri-gift-fill"></i>
         <span>Gérer Stock</span>
     </a>
     <ul class="sub-menu" aria-expanded="false">
@@ -113,42 +113,14 @@
 
     </ul>
 </li>
-<!-- 
-            <li class="menu-title">Pages</li>
+<li>
+                                <!-- <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="ri-profile-line"></i>
+                                    <span>Support</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="pages-starter.html">Starter Page</a></li> -->
 
-            <li>
-                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                    <i class="ri-account-circle-line"></i>
-                    <span>Authentication</span>
-                </a>
-                <ul class="sub-menu" aria-expanded="false">
-                    <li><a href="auth-login.html">Login</a></li>
-                    <li><a href="auth-register.html">Register</a></li>
-                    <li><a href="auth-recoverpw.html">Recover Password</a></li>
-                    <li><a href="auth-lock-screen.html">Lock Screen</a></li>
-                </ul>
-            </li>
-
-            <li>
-                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                    <i class="ri-profile-line"></i>
-                    <span>Utility</span>
-                </a>
-                <ul class="sub-menu" aria-expanded="false">
-                    <li><a href="pages-starter.html">Starter Page</a></li>
-                    <li><a href="pages-timeline.html">Timeline</a></li>
-                    <li><a href="pages-directory.html">Directory</a></li>
-                    <li><a href="pages-invoice.html">Invoice</a></li>
-                    <li><a href="pages-404.html">Error 404</a></li>
-                    <li><a href="pages-500.html">Error 500</a></li>
-                </ul>
-            </li>
-
-
-
-        
-
-        </ul> -->
     </div>
     <!-- Sidebar -->
 </div>
