@@ -138,7 +138,7 @@
                                                 @foreach($productEtats as $key => $item)
                                                     <tr>
                                                         <td><h6 class="mb-0"></h6></td>
-                                                        <td>{{ $item->entity_id }}</td>
+                                                        <td>Web Developer</td>
                                                         <td>
                                                             <div class="font-size-13"><i class="ri-checkbox-blank-circle-fill font-size-10 text-success align-middle me-2"></i>Active</div>
                                                         </td>
@@ -151,7 +151,7 @@
                                                         <td>$42,450</td>
                                                     </tr>
                                                      <!-- end -->
-                                                    
+                                                     @endforeach
                                                 </tbody><!-- end tbody -->
                                             </table> <!-- end table -->
                                         </div>
