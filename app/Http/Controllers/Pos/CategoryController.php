@@ -32,7 +32,7 @@ class CategoryController extends Controller
            ]);
    
             $notification = array(
-               'message' => 'Category Inserted Successfully', 
+               'message' => 'Catégorie ajoutée avec succès', 
                'alert-type' => 'success'
            );
    

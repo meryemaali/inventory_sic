@@ -35,7 +35,7 @@
                             <th>N° Bon</th> 
                             <th>Date </th>
                             <th>Fournisseur</th>
-                            <th>Categorie</th> 
+                            <th>Catégorie</th> 
                             <th>Qty</th> 
                             <th>Produit</th> 
                             <th>Status</th>

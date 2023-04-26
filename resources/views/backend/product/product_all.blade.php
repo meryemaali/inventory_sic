@@ -36,7 +36,6 @@
                             <th>Désignation </th>
                             <th>N/S</th> 
                             <th>Fournisseur </th>
-                            <th>Entité</th>
                             <th>Quantité</th>
                             <th>Quantité minimale</th>
                             <th>Action</th>
@@ -52,7 +51,6 @@
                             <td> {{ $item->name }} </td> 
                             <td> {{ $item->serial_number }} </td> 
                              <td> {{ $item['supplier']['name'] }} </td> 
-                             <td> {{ $item['entity']['name'] }} </td> 
                               <td> {{ $item->quantity }} </td>
                               <td> {{ $item->min_quantity }} </td> 
                                

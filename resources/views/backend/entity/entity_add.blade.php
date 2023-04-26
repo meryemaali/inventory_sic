@@ -92,9 +92,7 @@
                 secteur: {
                     required : true,
                 }, 
-                base_rattachement: {
-                    required : true,
-                },
+                
                 type: {
                     required : true,
                 },
@@ -107,9 +105,7 @@
                 secteur: {
                     required : 'Veuillez choisir un secteur',
                 },
-                base_rattachement: {
-                    required : 'Veuillez saisir la base de rattachement',
-                },
+               
                 type: {
                     required : 'Veuiller saisir le type entité',
                 },

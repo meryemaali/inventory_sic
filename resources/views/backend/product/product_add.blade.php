@@ -61,7 +61,7 @@
     </div>
   <!-- end row -->
 
-      <div class="row mb-3">
+      <!-- <div class="row mb-3">
         <label class="col-sm-2 col-form-label">Entité </label>
         <div class="col-sm-10">
             <select name="entity_id" class="form-select" aria-label="Default select example">
@@ -71,7 +71,7 @@
                @endforeach
                 </select>
         </div>
-    </div>
+    </div> -->
   <!-- end row -->
   <div class="row mb-3">
                 <label for="example-text-input" class="col-sm-2 col-form-label">Quantité </label>
@@ -118,15 +118,11 @@
                 name: {
                     required : true,
                 }, 
-                serial_number: {
-                    required : true,
-                },
+                
                  supplier_id: {
                     required : true,
                 },
-                 entity_id: {
-                    required : true,
-                },
+                
                  
             },
             messages :{
@@ -136,15 +132,11 @@
                 name: {
                     required : 'Veuillez saisir la désignation du produit',
                 },
-                serial_number: {
-                    required : 'Veuillez saisir le numéro de série du produit',
-                },
+                
                 supplier_id: {
                     required : 'Veuillez choisir le fournisseur',
                 },
-                entity_id: {
-                    required : 'Veuillez choisir une entité',
-                },
+                
                 
             },
             errorElement : 'span', 
