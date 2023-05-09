@@ -59,7 +59,7 @@
                             <td> {{ $item['entity']['name'] }} </td> 
                              <td> {{ $item['category']['name'] }} </td> 
                              <td> {{ $item['product']['name'] }} </td> 
-                              <td> {{ $item['product']['serial_number'] }} </td>
+                             <td> {{ $item->serial_number }} </td>
                               <td> {{ $item->service  }} </td> 
                               <td> {{ $item->etat  }} </td> 
                               <td> {{ $item->ref_avarie  }} </td> 

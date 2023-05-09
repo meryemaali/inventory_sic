@@ -53,15 +53,11 @@
         </div>
     </div>
     <div class="row mb-3">
-        <label class="col-sm-2 col-form-label">N/S </label>
-        <div class="col-sm-10">
-            <select name="serial_number" id="serial_number" class="form-select select2" aria-label="Default select example">
-                <option selected="">Choisir numéro de série </option>
-                
-                
-                </select>
-        </div>
-    </div>
+                <label for="example-text-input" class="col-sm-2 col-form-label">N/S </label>
+                <div class="form-group col-sm-10">
+                    <input name="serial_number" class="form-control" type="text"    >
+                </div>
+            </div>
   <!-- end row -->
   <!-- end row -->
             <div class="row mb-3">

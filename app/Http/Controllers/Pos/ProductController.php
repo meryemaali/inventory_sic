@@ -35,7 +35,6 @@ class ProductController extends Controller
 
             'category_id' => $request->category_id,
             'name' => $request->name,
-            'serial_number' => $request->serial_number ,
             'supplier_id' => $request->supplier_id,
             'quantity' => $request->quantity,
             'min_quantity' => $request->min_quantity,
@@ -72,7 +71,6 @@ class ProductController extends Controller
             
             'category_id' => $request->category_id,
             'name' => $request->name,
-            'serial_number' => $request->serial_number ,
             'supplier_id' => $request->supplier_id,
             'quantity' => $request->quantity,
             'min_quantity' => $request->min_quantity,

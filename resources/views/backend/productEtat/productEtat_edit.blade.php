@@ -56,16 +56,12 @@
         </div>
     </div>
     <div class="row mb-3">
-        <label class="col-sm-2 col-form-label">N/S </label>
-        <div class="col-sm-10">
-            <select name="serial_number" class="form-select" aria-label="Default select example">
-                <option selected="">Choisir numéro de série </option>
-                @foreach($product as $pro)
-                <option value="{{ $pro->id }}" {{ $pro->id == $productEtat->serial_number ? 'selected' : '' }}>{{ $pro->serial_number }}</option>
-               @endforeach
-                </select>
-        </div>
-    </div>
+                <label for="example-text-input" class="col-sm-2 col-form-label"> N/S </label>
+                <div class="form-group col-sm-10">
+                    <input name="serial_number" value="{{ $product->serial_number }}" class="form-control" type="text"    >
+                </div>
+            </div>
+
   <!-- end row -->
   <!-- end row -->
             <div class="row mb-3">

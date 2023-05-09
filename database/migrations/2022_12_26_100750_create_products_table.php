@@ -18,7 +18,6 @@ return new class extends Migration
             $table->integer('supplier_id');
             $table->integer('category_id');
             $table->string('name')->nullable();
-            $table->string('serial_number')->nullable();
             $table->double('quantity')->default('0');
             $table->double('min_quantity')->default('0');
             $table->tinyInteger('status')->default('1');
