@@ -21,7 +21,7 @@
                 <label for="example-text-input" class="col-sm-2 col-form-label">Secteur </label>
                 <div class="form-group col-sm-10">
                 <select name="secteur" class="form-select" aria-label="Default select example">
-            <option selected="">Choisir un secteur</option>
+            <option selected=""></option>
             @foreach($secteurs as $sec)
             <option value="{{ $sec->id }}">{{ $sec->secteur }}</option>
             @endforeach
@@ -44,7 +44,7 @@
                 <label for="example-text-input" class="col-sm-2 col-form-label">Type entité </label>
                 <div class="form-group col-sm-10">
                 <select name="type" class="form-select" aria-label="Default select example">
-            <option selected="">Choisir un type</option>
+            <option selected=""></option>
             @foreach($types as $t)
             <option value="{{ $t->id }}">{{ $t->type }}</option>
             @endforeach
@@ -105,7 +105,6 @@
                 secteur: {
                     required : 'Veuillez choisir un secteur',
                 },
-               
                 type: {
                     required : 'Veuiller saisir le type entité',
                 },

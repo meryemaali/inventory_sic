@@ -23,7 +23,7 @@
             <div class="card">
                 <div class="card-body">
 
-    <a href="{{ route('purchase.add') }}" class="btn btn-dark btn-rounded waves-effect waves-light" style="float:right;"><i class="fas fa-plus-circle">Bon en attente </i></a> <br>  <br>               
+    <a href="{{ route('purchase.add') }}" class="btn btn-dark btn-rounded waves-effect waves-light" style="float:right;"><i class="fas fa-plus-circle">Ajouter Bon  </i></a> <br>  <br>               
 
                     <h4 class="card-title">Les bons en attente</h4>
 

@@ -76,7 +76,7 @@ class SupplierController extends Controller
         Supplier::findOrFail($id)->delete();
   
          $notification = array(
-              'message' => 'Supplier Deleted Successfully', 
+              'message' => 'Fournisseur supprimé avec succès', 
               'alert-type' => 'success'
           );
   

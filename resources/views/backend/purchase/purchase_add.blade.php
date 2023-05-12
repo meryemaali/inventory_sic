@@ -149,11 +149,11 @@
     </td>
 
      <td>
-        <input type="number" min="1" class="form-control buying_qty text-right" name="buying_qty[]" value=""> 
+        <input type="number" min="1" class="form-control buying_qty text-right" name="buying_qty[]" value="1"> 
     </td>
 
     <td>
-        <input type="number" class="form-control unit_price text-right" name="unit_price[]" value=""> 
+        <input type="number" class="form-control unit_price text-right" name="unit_price[]" value="0"> 
     </td>
 
  <td>
@@ -190,12 +190,12 @@
                 $.notify("Num bon est obligatoire" ,  {globalPosition: 'top right', className:'error' });
                 return false;
                  }
-                  if(supplier_id == ''){
+                  if(supplier_id == 'Choisir un fournisseur'){
                 $.notify("Fournisseur est obligatoire" ,  {globalPosition: 'top right', className:'error' });
                 return false;
                  }
                   if(category_id == ''){
-                $.notify("Categorie est obligatoire" ,  {globalPosition: 'top right', className:'error' });
+                $.notify("Catégorie est obligatoire" ,  {globalPosition: 'top right', className:'error' });
                 return false;
                  }
                   if(product_id == ''){

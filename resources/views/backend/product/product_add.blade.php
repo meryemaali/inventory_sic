@@ -22,7 +22,7 @@
         <label class="col-sm-2 col-form-label">Article </label>
         <div class="col-sm-10">
             <select name="category_id" class="form-select" aria-label="Default select example">
-                <option selected="">Choisir la catégorie du produit</option>
+                <option selected=""></option>
                 @foreach($category as $cat)
                 <option value="{{ $cat->id }}">{{ $cat->name }}</option>
                @endforeach
@@ -52,7 +52,7 @@
         <label class="col-sm-2 col-form-label">Fournisseur </label>
         <div class="col-sm-10">
             <select name="supplier_id" class="form-select" aria-label="Default select example">
-                <option selected="">Choisir un fournisseur</option>
+                <option selected=""></option>
                 @foreach($supplier as $supp)
                 <option value="{{ $supp->id }}">{{ $supp->name }}</option>
                @endforeach

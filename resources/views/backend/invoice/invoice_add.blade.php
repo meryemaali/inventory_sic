@@ -205,10 +205,10 @@
     </td>
 
      <td>
-     <input type="number" min="1" class="form-control selling_qty text-right" name="selling_qty[]" value="">     </td>
+     <input type="number" min="1" class="form-control selling_qty text-right" name="selling_qty[]" value="1">     </td>
 
     <td>
-        <input type="number" class="form-control unit_price text-right" name="unit_price[]" value=""> 
+        <input type="number" class="form-control unit_price text-right" name="unit_price[]" value="0"> 
     </td>
 
 
@@ -236,16 +236,20 @@
             var product_id = $('#product_id').val();
             var product_name = $('#product_id').find('option:selected').text();
             if(date == ''){
-                $.notify("Date is Required" ,  {globalPosition: 'top right', className:'error' });
+                $.notify("Date est obligatoire" ,  {globalPosition: 'top right', className:'error' });
                 return false;
                  }
                  
                   if(category_id == ''){
-                $.notify("Category is Required" ,  {globalPosition: 'top right', className:'error' });
+                $.notify("Catégorie est obligatoire" ,  {globalPosition: 'top right', className:'error' });
                 return false;
                  }
                   if(product_id == ''){
-                $.notify("Product Field is Required" ,  {globalPosition: 'top right', className:'error' });
+                $.notify("Produit est obligatoire" ,  {globalPosition: 'top right', className:'error' });
+                return false;
+                 }
+                 if(entity_id == ''){
+                $.notify("Entité est obligatoire" ,  {globalPosition: 'top right', className:'error' });
                 return false;
                  }
                  var source = $("#document-template").html();
@@ -257,6 +261,7 @@
                     category_name:category_name,
                     product_id:product_id,
                     product_name:product_name,
+                    entity_id:entity_id,
 
                  };
                  var html = tamplate(data);
@@ -305,7 +310,7 @@
                 type: "GET",
                 data:{category_id:category_id},
                 success:function(data){
-                    var html = '<option value="">Sélectionner catégorie</option>';
+                    var html = '<option value="">Choisir produit</option>';
                     $.each(data,function(key,v){
                         html += '<option value=" '+v.id+' "> '+v.name+'</option>';
                     });

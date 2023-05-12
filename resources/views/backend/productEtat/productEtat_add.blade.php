@@ -22,7 +22,7 @@
         <label class="col-sm-2 col-form-label">Unité </label>
         <div class="col-sm-10">
             <select name="entity_id" class="form-select" aria-label="Default select example">
-                <option selected="">Choisir une unité</option>
+                <option selected=""></option>
                 @foreach($entity as $ent)
                 <option value="{{ $ent->id }}">{{ $ent->name }}</option>
                @endforeach
@@ -34,7 +34,7 @@
         <label class="col-sm-2 col-form-label">Catégorie </label>
         <div class="col-sm-10">
             <select name="category_id" id="category_id" class="form-select" aria-label="Default select example">
-                <option selected="">Choisir la catégorie du produit</option>
+                <option selected=""></option>
                 @foreach($category as $cat)
                 <option value="{{ $cat->id }}">{{ $cat->name }}</option>
                @endforeach
@@ -46,7 +46,7 @@
         <label class="col-sm-2 col-form-label">Désignation </label>
         <div class="col-sm-10">
             <select name="product_id" id="product_id" class="form-select select2" aria-label="Default select example">
-                <option selected="">Choisir désignation article</option>
+                <option selected=""></option>
                
                 </select>
                 
@@ -73,7 +73,7 @@
                 <label for="example-text-input" class="col-sm-2 col-form-label">Etat </label>
                 <div class="form-group col-sm-10">
                 <select name="etat" class="form-select" aria-label="Default select example">
-            <option selected="">Choisir état matériel</option>
+            <option selected=""></option>
             <option value="AV">AV</option>
             <option value="AVR">AVR</option>
             <option value="BF">BF</option>
@@ -171,7 +171,7 @@
                     required : 'Veuillez choisir la désignation du produit',
                 },
                 serial_number: {
-                    required : 'Veuillez choisir le numéro de série du produit',
+                    required : 'Veuillez saisir le numéro de série du produit',
                 },
                 service: {
                     required : 'Veuillez indiquer le service',
@@ -208,7 +208,7 @@
                 type: "GET",
                 data:{category_id:category_id},
                 success:function(data){
-                    var html = '<option value="">Choisir produit</option>';
+                    var html = '<option value=""></option>';
                     $.each(data,function(key,v){
                         html += '<option value=" '+v.id+' "> '+v.name+'</option>';
                     });
@@ -219,7 +219,7 @@
     });
 </script>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     $(function(){
         $(document).on('change','#product_id',function(){
             var product_id = $(this).val();
@@ -237,7 +237,7 @@
             })
         });
     });
-</script>
+</script> -->
 
 
 
