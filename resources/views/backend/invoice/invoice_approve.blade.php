@@ -9,7 +9,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <h4 class="mb-sm-0">Approuver facture</h4>
+                                    <h4 class="mb-sm-0">Approuver Bon</h4>
 
 
 
@@ -26,9 +26,9 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                <h4>Facture N° #{{ $invoice->invoice_no }} - {{ date('d-m-Y',strtotime($invoice->date)) }} </h4>
+                <h4>Bon sortie N° #{{ $invoice->invoice_no }} - {{ date('d-m-Y',strtotime($invoice->date)) }} </h4>
 
-    <a href="{{ route('invoice.pending.list') }}" class="btn btn-dark btn-rounded waves-effect waves-light" style="float:right;"><i class="fa fa-list"> Liste des factures en attente </i></a> <br>  <br>               
+    <a href="{{ route('invoice.pending.list') }}" class="btn btn-dark btn-rounded waves-effect waves-light" style="float:right;"><i class="fa fa-list"> Liste des bons sortie en attente </i></a> <br>  <br>               
 
     <table class="table table-dark" width="100%">
         <tbody>
@@ -54,12 +54,11 @@
             <thead>
                 <tr>
                     <th class="text-center">Sl</th>
-                    <th class="text-center">Categorie</th>
+                    <th class="text-center">Catégorie</th>
                     <th class="text-center">Produit</th>
                     <th class="text-center"  style="background-color: #8B008B">Stock actuel</th>
                     <th class="text-center">Quantité</th>
-                    <th class="text-center">Prix Unité</th>
-                    <th class="text-center">Prix Total</th>
+                    
                 </tr>
 
             </thead>
@@ -77,36 +76,11 @@
             <td class="text-center">{{ $details['product']['name'] }}</td>
             <td class="text-center" style="background-color: #8B008B">{{ $details['product']['quantity'] }}</td>
             <td class="text-center">{{ $details->selling_qty }}</td>
-            <td class="text-center">{{ $details->unit_price }}</td>
-            <td class="text-center">{{ $details->selling_price }}</td>
+            
         </tr>
-        @php
-        $total_sum += $details->selling_price;
-        @endphp
+       
         @endforeach
-        <tr>
-            <td colspan="6"> sous Total </td>
-             <td > {{ $total_sum }} </td>
-        </tr>
-         <tr>
-            <td colspan="6"> Remise </td>
-             <td > {{ $payment->discount_amount }} </td>
-        </tr>
-
-         <tr>
-            <td colspan="6"> Montant payé </td>
-             <td >{{ $payment->paid_amount }} </td>
-        </tr>
-
-         <tr>
-            <td colspan="6"> Montant restant </td>
-             <td > {{ $payment->due_amount }} </td>
-        </tr>
-
-        <tr>
-            <td colspan="6"> Total </td>
-             <td >{{ $payment->total_amount }}</td>
-        </tr>
+       
     </tbody>
 
          </table>

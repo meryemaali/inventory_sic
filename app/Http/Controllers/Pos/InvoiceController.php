@@ -83,8 +83,8 @@ class InvoiceController extends Controller
               $invoice_details->category_id = $request->category_id[$i];
               $invoice_details->product_id = $request->product_id[$i];
               $invoice_details->selling_qty = $request->selling_qty[$i];
-              $invoice_details->unit_price = $request->unit_price[$i];
-              $invoice_details->selling_price = $request->selling_price[$i];
+              $invoice_details->unit_price = 0;
+              $invoice_details->selling_price = 0;
               $invoice_details->status = '0'; 
               $invoice_details->save(); 
            }
@@ -154,7 +154,7 @@ class InvoiceController extends Controller
         PaymentDetail::where('invoice_id',$invoice->id)->delete(); 
 
          $notification = array(
-        'message' => 'Invoice Deleted Successfully', 
+        'message' => 'Données supprimées avec succès', 
         'alert-type' => 'success'
     );
     return redirect()->back()->with($notification); 
@@ -176,7 +176,7 @@ class InvoiceController extends Controller
             if($product->quantity < $request->selling_qty[$key]){
 
         $notification = array(
-        'message' => 'Sorry you approve Maximum Value', 
+        'message' => 'Désolé Vous approuvez la valeur maximale', 
         'alert-type' => 'error'
     );
     return redirect()->back()->with($notification); 
@@ -204,7 +204,7 @@ class InvoiceController extends Controller
         });
 
     $notification = array(
-        'message' => 'Invoice Approve Successfully', 
+        'message' => 'Données enregistrées avec succès', 
         'alert-type' => 'success'
     );
     return redirect()->route('invoice.pending.list')->with($notification);

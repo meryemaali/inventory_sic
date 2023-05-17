@@ -16,12 +16,12 @@ return new class extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
             $table->integer('invoice_id')->nullable();
-            $table->integer('entity_id')->nullable();
-            $table->string('paid_status',51)->nullable();
-            $table->double('paid_amount')->nullable();
-            $table->double('due_amount')->nullable();
-            $table->double('total_amount')->nullable();
-            $table->double('discount_amount')->nullable();
+            $table->integer('entity_id')->default('0');
+            $table->string('paid_status',51)->default('0');
+            $table->double('paid_amount')->default('0');
+            $table->double('due_amount')->default('0');
+            $table->double('total_amount')->default('0');
+            $table->double('discount_amount')->default('0');
             $table->timestamps();
         });
     }

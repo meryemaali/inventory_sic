@@ -72,7 +72,7 @@ class PurchaseController extends Controller
             Purchase::findOrFail($id)->delete();
     
              $notification = array(
-            'message' => 'Achat supprimé avec succès', 
+            'message' => 'Données supprimées avec succès', 
             'alert-type' => 'success'
         );
         return redirect()->back()->with($notification); 

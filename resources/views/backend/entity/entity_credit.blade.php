@@ -33,7 +33,7 @@
                         <tr>
                             <th>Sl</th>
                             <th>Entité</th> 
-                            <th>Facture N° </th>
+                            <th>Bon sortie N° </th>
                             <th>Date</th>
                             <th>Montant restant</th> 
                             <th>Action</th>

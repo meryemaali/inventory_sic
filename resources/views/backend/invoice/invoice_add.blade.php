@@ -10,14 +10,14 @@
     <div class="card">
         <div class="card-body">
 
-            <h4 class="card-title">Ajouter facture  </h4><br><br>
+            <h4 class="card-title">Ajouter de Bon sortie  </h4><br><br>
 
 
     <div class="row">
 
          <div class="col-md-1">
             <div class="md-3">
-                <label for="example-text-input" class="form-label">N° Fac</label>
+                <label for="example-text-input" class="form-label">N° Bon</label>
                  <input class="form-control example-date-input" name="invoice_no" type="text" value="{{ $invoice_no }}" id="invoice_no" readonly style="background-color:#ddd" >
             </div>
         </div>
@@ -90,8 +90,7 @@
                         <th>Catégorie</th>
                         <th>Produit </th>
                         <th width="7%">Quantité</th>
-                        <th width="10%">Prix unité  </th>
-                        <th width="15%">Prix total</th>
+                       
                         <th width="7%">Action</th> 
 
                     </tr>
@@ -102,18 +101,9 @@
                 </tbody>
 
                 <tbody>
-                <td colspan="4"> Remise</td>
-            <td>
-            <input type="text" name="discount_amount" id="discount_amount" class="form-control estimated_amount" placeholder="Montant remise"  >
-            </td>
+          
         </tr>
-                    <tr>
-                        <td colspan="4"> Total</td>
-                        <td>
-                            <input type="text" name="estimated_amount" value="0" id="estimated_amount" class="form-control estimated_amount" readonly style="background-color: #ddd;" >
-                        </td>
-                        <td></td>
-                    </tr>
+                   
 
                 </tbody>                
             </table><br>
@@ -125,18 +115,7 @@
             </div><br>
 
             <div class="row">
-                <div class="form-group col-md-3">
-                    <label> Statut paiement </label>
-                    <select name="paid_status" id="paid_status" class="form-select">
-                        <option value="">Choisir statut </option>
-                        <option value="full_paid">Paiement total</option>
-                        <option value="full_due">Paiement non effectué </option>
-                        <option value="partial_paid">Paiement partiel </option>
-
-                    </select>
-        <input type="text" name="paid_amount" class="form-control paid_amount" placeholder="Entrer le montant payé" style="display:none;">
-                </div>
-            
+                
 
                 <div class="form-group col-md-9">
                 <label> Nom entité  </label>
@@ -205,17 +184,13 @@
     </td>
 
      <td>
-     <input type="number" min="1" class="form-control selling_qty text-right" name="selling_qty[]" value="1">     </td>
+     <input type="number" min="1" class="form-control selling_qty text-right" name="selling_qty[]" value="">     </td>
 
-    <td>
-        <input type="number" class="form-control unit_price text-right" name="unit_price[]" value="0"> 
-    </td>
+    
 
 
 
-     <td>
-        <input type="number" class="form-control selling_price text-right" name="selling_price[]" value="0" readonly> 
-    </td>
+    
 
      <td>
         <i class="btn btn-danger btn-sm fas fa-window-close removeeventmore"></i>
@@ -248,10 +223,6 @@
                 $.notify("Produit est obligatoire" ,  {globalPosition: 'top right', className:'error' });
                 return false;
                  }
-                 if(entity_id == ''){
-                $.notify("Entité est obligatoire" ,  {globalPosition: 'top right', className:'error' });
-                return false;
-                 }
                  var source = $("#document-template").html();
                  var tamplate = Handlebars.compile(source);
                  var data = {
@@ -261,8 +232,6 @@
                     category_name:category_name,
                     product_id:product_id,
                     product_name:product_name,
-                    entity_id:entity_id,
-
                  };
                  var html = tamplate(data);
                  $("#addRow").append(html); 
@@ -271,32 +240,8 @@
             $(this).closest(".delete_add_more_item").remove();
             totalAmountPrice();
         });
-        $(document).on('keyup click','.unit_price,.selling_qty', function(){
-            var unit_price = $(this).closest("tr").find("input.unit_price").val();
-            var qty = $(this).closest("tr").find("input.selling_qty").val();
-            var total = unit_price * qty;
-            $(this).closest("tr").find("input.selling_price").val(total);
-            $('#discount_amount').trigger('keyup');
-        });
-        $(document).on('keyup','#discount_amount',function(){
-            totalAmountPrice();
-        });
-        // Calculate sum of amout in invoice 
-        function totalAmountPrice(){
-            var sum = 0;
-            $(".selling_price").each(function(){
-                var value = $(this).val();
-                if(!isNaN(value) && value.length != 0){
-                    sum += parseFloat(value);
-                }
-            });
-
-            var discount_amount = parseFloat($('#discount_amount').val());
-            if(!isNaN(discount_amount) && discount_amount.length != 0){
-                    sum -= parseFloat(discount_amount);
-                }
-            $('#estimated_amount').val(sum);
-        }  
+       
+       
     });
 </script>
 
@@ -310,7 +255,7 @@
                 type: "GET",
                 data:{category_id:category_id},
                 success:function(data){
-                    var html = '<option value="">Choisir produit</option>';
+                    var html = '<option value="">Sélectionner produit</option>';
                     $.each(data,function(key,v){
                         html += '<option value=" '+v.id+' "> '+v.name+'</option>';
                     });
@@ -338,16 +283,7 @@
     });
 </script>
 
-<script type="text/javascript">
-    $(document).on('change','#paid_status', function(){
-        var paid_status = $(this).val();
-        if (paid_status == 'partial_paid') {
-            $('.paid_amount').show();
-        }else{
-            $('.paid_amount').hide();
-        }
-    });
-</script>
+
 
 
 @endsection 

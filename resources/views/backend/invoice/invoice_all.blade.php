@@ -9,7 +9,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <h4 class="mb-sm-0">Toutes les factures</h4>
+                                    <h4 class="mb-sm-0">Tous les bons de sortie</h4>
 
 
 
@@ -23,9 +23,9 @@
             <div class="card">
                 <div class="card-body">
 
-    <a href="{{ route('invoice.add') }}" class="btn btn-dark btn-rounded waves-effect waves-light" style="float:right;"><i class="fas fa-plus-circle"> Ajouter Facture </i></a> <br>  <br>               
+    <a href="{{ route('invoice.add') }}" class="btn btn-dark btn-rounded waves-effect waves-light" style="float:right;"><i class="fas fa-plus-circle"> Ajouter Bon </i></a> <br>  <br>               
 
-                    <h4 class="card-title">Factures </h4>
+                    <h4 class="card-title">Bons de sortie </h4>
 
 
                     <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
@@ -33,10 +33,9 @@
                         <tr>
                             <th>Sl</th>
                             <th>Entité</th> 
-                            <th>N° Facture</th>
+                            <th>N° bon sortie</th>
                             <th>Date </th>
                             <th>Description</th>  
-                            <th>Montant</th>
 
                         </thead>
 
@@ -53,7 +52,6 @@
 
                  <td>  {{ $item->description }} </td> 
 
-               <td>  {{ $item['payment']['total_amount'] }} </td>
 
             </tr>
                         @endforeach

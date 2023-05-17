@@ -10,7 +10,7 @@
     <div class="card">
         <div class="card-body">
 
-            <h4 class="card-title">Rapport quotidien des factures </h4><br><br>
+            <h4 class="card-title">Rapport quotidien des bons de sortie </h4><br><br>
 
 <form method="GET" action="{{ route('daily.invoice.pdf') }}" target="_blank" id="myForm">
     <div class="row">

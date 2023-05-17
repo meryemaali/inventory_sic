@@ -90,13 +90,13 @@
         <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
                 <i class="ri-compass-2-fill"></i>
-                <span>Gérer les factures </span>
+                <span>Gérer les bons de sortie </span>
             </a>
             <ul class="sub-menu" aria-expanded="false">
-                <li><a href="{{ route('invoice.all') }}">Toutes les factures</a></li>
-                <li><a href="{{ route('invoice.pending.list') }} ">Factures à approuver</a></li>
-                <li><a href="{{ route('print.invoice.list') }}">Imprimer liste factures</a></li>
-                <li><a href="{{ route('daily.invoice.report') }}">Rapport quotidien des factures</a></li>
+                <li><a href="{{ route('invoice.all') }}">Tous les bons</a></li>
+                <li><a href="{{ route('invoice.pending.list') }} ">Bons à approuver</a></li>
+                <li><a href="{{ route('print.invoice.list') }}">Imprimer liste bons</a></li>
+                <li><a href="{{ route('daily.invoice.report') }}">Rapport quotidien des bons</a></li>
 
             </ul>
         </li>

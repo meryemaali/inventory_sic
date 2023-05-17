@@ -67,7 +67,7 @@
         <tr>
             <td><strong>Sl </strong></td>
             <td class="text-center"><strong>Entité </strong></td>
-            <td class="text-center"><strong>Facture N° </strong>
+            <td class="text-center"><strong>Bon sortie N° </strong>
             </td>
             <td class="text-center"><strong>Date</strong>
             </td>

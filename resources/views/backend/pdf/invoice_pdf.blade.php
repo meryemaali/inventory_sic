@@ -8,12 +8,12 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <h4 class="mb-sm-0">Facture</h4>
+                                    <h4 class="mb-sm-0">Bon sortie</h4>
 
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="javascript: void(0);"> </a></li>
-                                            <li class="breadcrumb-item active">Facture</li>
+                                            <li class="breadcrumb-item active">Bon sortie</li>
                                         </ol>
                                     </div>
 
@@ -30,7 +30,7 @@
     <div class="row">
         <div class="col-12">
             <div class="invoice-title">
-                <h4 class="float-end font-size-16"><strong>Facture N° # {{ $invoice->invoice_no }}</strong></h4>
+                <h4 class="float-end font-size-16"><strong>Bon sortie N° # {{ $invoice->invoice_no }}</strong></h4>
                 <h3>
                     <!-- <img src="{{ asset('backend/assets/images/logo-sm.png') }}" alt="logo" height="24"/>  -->
                     Division SIC
@@ -45,7 +45,7 @@
                 </div>
                 <div class="col-6 mt-4 text-end">
                     <address>
-                        <strong>Date facture :</strong><br>
+                        <strong>Date bon sortie :</strong><br>
                          {{ date('d-m-Y',strtotime($invoice->date)) }} <br><br>
                     </address>
                 </div>
@@ -61,7 +61,7 @@
         <div class="col-12">
             <div>
                 <div class="p-2">
-                    <!-- <h3 class="font-size-16"><strong>Entité Facture</strong></h3> -->
+                    <!-- <h3 class="font-size-16"><strong>Entité Bon</strong></h3> -->
                 </div>
                 <div class="">
 <div class="table-responsive">
