@@ -4,21 +4,7 @@
                         <!-- LOGO -->
                         <div class="navbar-brand-box">
                             <a href="index.html" class="logo logo-dark">
-                                <!-- <span class="logo-sm">
-                                    <img src="{{ asset('backend/assets/images/logo-sm.png') }}" alt="logo-sm" height="22">
-                                </span>
-                                <span class="logo-lg">
-                                    <img src="{{ asset('backend/assets/images/logo-dark.png') }}" alt="logo-dark" height="20">
-                                </span>
-                            </a>
-
-                            <a href="index.html" class="logo logo-light">
-                                <span class="logo-sm">
-                                    <img src="{{ asset('backend/assets/images/logo-sm.png') }}" alt="logo-sm-light" height="22">
-                                </span>
-                                <span class="logo-lg">
-                                    <img src="{{ asset('backend/assets/images/logo-light.png') }}" alt="logo-light" height="20">
-                                </span> -->
+                               
                             </a>
                         </div>
 
@@ -56,11 +42,11 @@
                         
                         
                         
-                        <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-notifications-dropdown"
+                        <!-- <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-notifications-dropdown"
                                   data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="ri-notification-3-line"></i>
                                 <span class="noti-dot"></span>
-                            </button>
+                            </button> -->
 
 
 
@@ -68,7 +54,7 @@
                             
 
 
-                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                            <!-- <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
                                 aria-labelledby="page-header-notifications-dropdown">
                                 <div class="p-3">
                                     <div class="row align-items-center">
@@ -76,7 +62,7 @@
                                             <h6 class="m-0"> Notifications </h6>
                                         </div>
                                         <div class="col-auto">
-                                            <a href="#!" class="small"> View All</a>
+                                            <a href="{{ route('notification.all') }}" class="small"> Voir Tout </a>
                                         </div>
                                     </div>
                                 </div>
@@ -144,11 +130,11 @@
                                 <div class="p-2 border-top">
                                     <div class="d-grid">
                                         <a class="btn btn-sm btn-link font-size-14 text-center" href="javascript:void(0)">
-                                            <i class="mdi mdi-arrow-right-circle me-1"></i> View More..
+                                            <i class="mdi mdi-arrow-right-circle me-1"></i> Vois plus..
                                         </a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
 
                         @php
@@ -188,3 +174,5 @@
                     </div>
                 </div>
             </header>
+
+   

@@ -22,15 +22,7 @@
 
            
 
-            <li>
-                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                    <i class="ri-hotel-fill"></i>
-                    <span>Gérer Fournisseurs</span>
-                </a>
-                <ul class="sub-menu" aria-expanded="false">
-                    <li><a href="{{ route('supplier.all') }}">Tous les fournisseurs</a></li>
-                </ul>
-            </li>
+            
 
             <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -42,6 +34,16 @@
                 <!-- <li><a href="{{ route('credit.entity') }}">Crédit entités</a></li> -->
                 </ul>
         </li>
+
+        <li>
+                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                    <i class="ri-hotel-fill"></i>
+                    <span>Gérer Fournisseurs</span>
+                </a>
+                <ul class="sub-menu" aria-expanded="false">
+                    <li><a href="{{ route('supplier.all') }}">Tous les fournisseurs</a></li>
+                </ul>
+            </li>
 
         <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -90,7 +92,7 @@
         <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
                 <i class="ri-compass-2-fill"></i>
-                <span>Gérer les bons de sortie </span>
+                <span>Gérer les Bons de sortie </span>
             </a>
             <ul class="sub-menu" aria-expanded="false">
                 <li><a href="{{ route('invoice.all') }}">Tous les bons</a></li>

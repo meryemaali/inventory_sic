@@ -23,51 +23,21 @@
                             </div>
                         </div>
                         <!-- end page title -->
+                        @php
 
+$entities = App\Models\Entity::count();
+$suppliers = App\Models\Supplier::count();
+$categories = App\Models\Category::count();
+$invoices = App\Models\Invoice::count();
+
+$productEtats = App\Models\ProductEtat::get();
+$products = App\Models\Product::select('quantity')->where('category_id',8)->get();
+$allData = App\Models\Product::orderBy('supplier_id','asc')->orderBy('category_id','asc')->get();
+
+
+
+@endphp
                         <div class="row">
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="d-flex">
-                                            <div class="flex-grow-1">
-                                                <p class="text-truncate font-size-14 mb-2">Total Sales</p>
-                                                <h4 class="mb-2">1452</h4>
-                                                <p class="text-muted mb-0"><span class="text-success fw-bold font-size-12 me-2"><i class="ri-arrow-right-up-line me-1 align-middle"></i>9.23%</span>from previous period</p>
-                                            </div>
-                                            <div class="avatar-sm">
-                                                <span class="avatar-title bg-light text-primary rounded-3">
-                                                    <i class="ri-shopping-cart-2-line font-size-24"></i>  
-                                                </span>
-                                            </div>
-                                        </div>                                            
-                                    </div><!-- end cardbody -->
-                                </div><!-- end card -->
-                            </div><!-- end col -->
-                            @php
-
-                            $entities = App\Models\Entity::count();
-                            $productEtats = App\Models\ProductEtat::get();
-
-
-                        @endphp
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="d-flex">
-                                            <div class="flex-grow-1">
-                                                <p class="text-truncate font-size-14 mb-2">New Orders</p>
-                                                <h4 class="mb-2">938</h4>
-                                                <p class="text-muted mb-0"><span class="text-danger fw-bold font-size-12 me-2"><i class="ri-arrow-right-down-line me-1 align-middle"></i>1.09%</span>from previous period</p>
-                                            </div>
-                                            <div class="avatar-sm">
-                                                <span class="avatar-title bg-light text-success rounded-3">
-                                                    <i class="mdi mdi-currency-usd font-size-24"></i>  
-                                                </span>
-                                            </div>
-                                        </div>                                              
-                                    </div><!-- end cardbody -->
-                                </div><!-- end card -->
-                            </div><!-- end col -->
                             <div class="col-xl-3 col-md-6">
                                 <div class="card">
                                     <div class="card-body">
@@ -79,7 +49,27 @@
                                             </div>
                                             <div class="avatar-sm">
                                                 <span class="avatar-title bg-light text-primary rounded-3">
-                                                    <i class="ri-user-3-line font-size-24"></i>  
+                                                <i class="ri-user-3-line font-size-24"></i> 
+                                                <!-- <i class="ri-user-3-line font-size-24"></i>  -->
+                                                </span>
+                                            </div>
+                                        </div>                                            
+                                    </div><!-- end cardbody -->
+                                </div><!-- end card -->
+                            </div><!-- end col -->
+                           
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex">
+                                            <div class="flex-grow-1">
+                                                <p class="text-truncate font-size-14 mb-2">Fournisseurs</p>
+                                                <h4 class="mb-2">{{ $suppliers }}</h4>
+                                                <p class="text-muted mb-0"><span class="text-danger fw-bold font-size-12 me-2"></p>
+                                            </div>
+                                            <div class="avatar-sm">
+                                                <span class="avatar-title bg-light text-success rounded-3">
+                                                <i class="ri-user-3-line font-size-24"></i>  
                                                 </span>
                                             </div>
                                         </div>                                              
@@ -91,9 +81,27 @@
                                     <div class="card-body">
                                         <div class="d-flex">
                                             <div class="flex-grow-1">
-                                                <p class="text-truncate font-size-14 mb-2">Unique Visitors</p>
-                                                <h4 class="mb-2">29670</h4>
-                                                <p class="text-muted mb-0"><span class="text-success fw-bold font-size-12 me-2"><i class="ri-arrow-right-up-line me-1 align-middle"></i>11.7%</span>from previous period</p>
+                                                <p class="text-truncate font-size-14 mb-2">Catégories</p>
+                                                <h4 class="mb-2">{{ $categories }}</h4>
+                                                <p class="text-muted mb-0"><span class="text-success fw-bold font-size-12 me-2"></p>
+                                            </div>
+                                            <div class="avatar-sm">
+                                                <span class="avatar-title bg-light text-primary rounded-3">
+                                                <i class="ri-user-3-line font-size-24"></i>  
+                                                </span>
+                                            </div>
+                                        </div>                                              
+                                    </div><!-- end cardbody -->
+                                </div><!-- end card -->
+                            </div><!-- end col -->
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex">
+                                            <div class="flex-grow-1">
+                                                <p class="text-truncate font-size-14 mb-2">Bons de sortie</p>
+                                                <h4 class="mb-2">{{ $invoices }}</h4>
+                                                <p class="text-muted mb-0"><span class="text-success fw-bold font-size-12 me-2"></p>
                                             </div>
                                             <div class="avatar-sm">
                                                 <span class="avatar-title bg-light text-success rounded-3">
@@ -115,40 +123,41 @@
                                     <div class="card-body">
                                         <div class="dropdown float-end">
                                             <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <i class="mdi mdi-dots-vertical"></i>
+                                                <!-- <i class="mdi mdi-dots-vertical"></i> -->
                                             </a>
                                             
                                         </div>
     
-                                        <h4 class="card-title mb-4">Etat Matériel</h4>
+                                        <h4 class="card-title mb-4">Etat Stock</h4>
     
                                         <div class="table-responsive">
                                             <table class="table table-centered mb-0 align-middle table-hover table-nowrap">
                                                 <thead class="table-light">
                                                     <tr>
-                                                        <th>Unité</th>
-                                                        <th>Article</th>
-                                                        <th>Désignation</th>
-                                                        <th>N/S</th>
-                                                        <th>Service </th>
-                                                        <th>Etat</th>
+                                                    <th>Sl</th>
+                                                    <th>Fournisseur </th>
+                                                    <th>Catégorie</th> 
+                                                    <th>Produit</th> 
+                                                    <th>In Qté</th> 
+                                                    <th>Out Qté </th>
+                                                    <th>Stock </th>
                                                     </tr>
                                                 </thead><!-- end thead -->
                                                 <tbody>
-                                                @foreach($productEtats as $key => $item)
+                                                @foreach($allData as $key => $item)
+                            @php
+$buying_total = App\Models\Purchase::where('category_id',$item->category_id)->where('product_id',$item->id)->where('status','1')->sum('buying_qty');
+$selling_total = App\Models\InvoiceDetail::where('category_id',$item->category_id)->where('product_id',$item->id)->where('status','1')->sum('selling_qty');
+@endphp
                                                     <tr>
-                                                        <td><h6 class="mb-0"></h6></td>
-                                                        <td>Web Developer</td>
-                                                        <td>
-                                                            <div class="font-size-13"><i class="ri-checkbox-blank-circle-fill font-size-10 text-success align-middle me-2"></i>Active</div>
-                                                        </td>
-                                                        <td>
-                                                            23
-                                                        </td>
-                                                        <td>
-                                                            04 Apr, 2021
-                                                        </td>
-                                                        <td>$42,450</td>
+                                                    <td> {{ $key+1}} </td> 
+        <td> {{ $item['supplier']['name'] }} </td> 
+        <td> {{ $item['category']['name'] }} </td> 
+        <td> {{ $item->name }} </td> 
+        <td> <span class="btn btn-success"> {{ $buying_total  }}</span>  </td> 
+        <td> <span class="btn btn-info"> {{ $selling_total  }}</span> </td> 
+        <td> <span class="btn btn-danger"> {{ $item->quantity }}</span> </td> 
+
                                                     </tr>
                                                      <!-- end -->
                                                      @endforeach

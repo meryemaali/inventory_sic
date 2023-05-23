@@ -49,7 +49,12 @@
                         <td> {{ $item['category']['name'] }} </td> 
                             <td> {{ $item->name }} </td> 
                              <td> {{ $item['supplier']['name'] }} </td> 
-                              <td> {{ $item->quantity }} </td>
+                             <td> @if($item->quantity < $item->min_quantity )
+                    <span class="btn btn-danger">  {{ $item->quantity }}</span>
+                    @else
+                    {{ $item->quantity }}
+                    @endif </td>
+                             
                               <td> {{ $item->min_quantity }} </td> 
                                
                             <td>
